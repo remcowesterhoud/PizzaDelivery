@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ejb" name="PizzaDelivery:ejb exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/PizzaDelivery_ejb_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="PizzaDelivery/ejb/EJB" />
+      <element id="module-output" name="PizzaDelivery" />
+    </root>
+  </artifact>
+</component>
