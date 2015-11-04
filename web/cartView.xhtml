@@ -44,7 +44,15 @@
                     </h:column>
                 </h:dataTable>
             </h:form>
-            <b>Total price is <i class="fa fa-eur"/>#{cart.total}</b>
+        </p>
+        <p>
+            <h:form>
+                <b>Total price is <i class="fa fa-eur"/>#{cart.total}</b>
+                <h:commandButton id="checkout"
+                                 action="checkoutView"
+                                 value="Checkout"
+                                 styleClass="btn btn-primary"/>
+            </h:form>
         </p>
     </div>
 </h:body>

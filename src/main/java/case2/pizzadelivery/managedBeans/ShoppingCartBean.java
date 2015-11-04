@@ -51,6 +51,10 @@ public class ShoppingCartBean {
         cartItems.clear();
     }
 
+    public String deliver(){
+        return "orderComplete";
+    }
+
     public HashMap<Integer, CartItem> getCartItems() {
         return cartItems;
     }

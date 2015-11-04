@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+<h:head>
+    <title>Pizza Store</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+          integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+</h:head>
+<h:body>
+    <div class="col-md-10 col-md-offset-1">
+        <h2>Order Details</h2>
+
+        <p>
+            <h:form>
+                <div class="form-group">
+                    <h:outputLabel>First Name</h:outputLabel><br/>
+                    <h:inputText id="firstName"
+                                 value="#{person.firstName}"
+                                 p:title="Enter first name"
+                                 p:placeholder="First name"
+                                 styleClass="form-control"/>
+                </div>
+                <div class="form-group">
+                    <h:outputLabel>Last Name</h:outputLabel><br/>
+                    <h:inputText id="lastName"
+                                 value="#{person.lastName}"
+                                 p:title="Enter last name"
+                                 p:placeholder="Last name"
+                                 styleClass="form-control"/>
+                </div>
+                <div class="form-group">
+                    <h:outputLabel>Address</h:outputLabel><br/>
+                    <h:inputText id="address"
+                                 value="#{person.address}"
+                                 p:title="Enter delivery address"
+                                 p:placeholder="Delivery address"
+                                 styleClass="form-control"/>
+                </div>
+                <div class="form-group">
+                    <h:outputLabel>ZIP Code</h:outputLabel><br/>
+                    <h:inputText id="zip"
+                                 value="#{person.zip}"
+                                 p:title="Enter ZIP code"
+                                 p:placeholder="ZIP"
+                                 styleClass="form-control"/>
+                </div>
+                <div class="form-group">
+                    <h:outputLabel>City</h:outputLabel><br/>
+                    <h:inputText id="city"
+                                 value="#{person.city}"
+                                 p:title="Enter city"
+                                 p:placeholder="City"
+                                 styleClass="form-control"/>
+                </div>
+                <div class="form-group">
+                    <h:commandButton value="Deliver!" action="#{cart.deliver()}"
+                                     styleClass="btn btn-primary"/>
+                </div>
+            </h:form>
+        </p>
+    </div>
+</h:body>
+</html>
