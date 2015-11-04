@@ -52,7 +52,6 @@ public class ShoppingCartBean {
     }
 
     public String deliver(){
-
         return "orderComplete";
     }
 

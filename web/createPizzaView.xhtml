@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+<h:head>
+    <title>Pizza Store</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+          integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+</h:head>
+<h:body>
+    <div class="col-md-10 col-md-offset-1">
+        <h2>Create your own Pizza!</h2>
+
+        <div class="col-md-1 col-md-offset-11">
+            <p>
+                <h:form>
+                    <h:commandLink id="Cart" action="cartView">
+                        <i class="fa fa-shopping-cart"/> #{cart.itemAmount}
+                    </h:commandLink>
+                </h:form>
+            </p>
+        </div>
+
+        <p>
+            <h:form>
+                <h:commandButton id="anchovy"
+                                 action="#{createPizza.addAnchovy()}"
+                                 value="Add anchovy!"
+                                 styleClass="btn btn-primay"/>
+                <h:commandButton id="bacon"
+                                 action="#{createPizza.addBacon()}"
+                                 value="Add bacon!"
+                                 styleClass="btn btn-primay"/>
+                <h:commandButton id="cheese"
+                                 action="#{createPizza.addCheese()}"
+                                 value="Add Cheese!"
+                                 styleClass="btn btn-primay"/>
+            </h:form>
+        </p>
+    </div>
+</h:body>
+</html>
