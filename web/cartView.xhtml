@@ -16,56 +16,35 @@
 </h:head>
 <h:body>
     <div class="col-md-10 col-md-offset-1">
-        <h2>Pizza Store</h2>
-
-        <div class="col-md-1 col-md-offset-11">
-            <p>
-                <h:form>
-                    <h:commandLink id="Cart" action="cartView">
-                        <i class="fa fa-shopping-cart"/> #{cart.itemAmount}
-                    </h:commandLink>
-                </h:form>
-            </p>
-        </div>
+        <h2>Cart Items</h2>
 
         <p>
             <h:form>
-                <h:dataTable id="pizzaTable" value="#{inventory.pizzaList}" var="t" styleClass="table table-striped">
+                <h:dataTable id="pizzaTable" value="#{cart.items}" var="item" styleClass="table table-striped">
                     <h:column>
                         <f:facet name="header">
-                            Name
+                            Pizza
                         </f:facet>
-                        #{t.name}
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            Description
-                        </f:facet>
-                        #{t.description}
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            Calories
-                        </f:facet>
-                        #{t.calories}
+                        #{item.object.name} x#{item.amount}
                     </h:column>
                     <h:column>
                         <f:facet name="header">
                             Price
                         </f:facet>
-                        #{t.price}
+                        <i class="fa fa-eur"/>#{item.object.price * item.amount}
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            Add
+                            Remove
                         </f:facet>
-                        <h:commandButton id="add"
-                                         action="#{cart.add(t)}"
-                                         value="Add to cart"
+                        <h:commandButton id="remove"
+                                         action="#{cart.remove(item.object.id)}"
+                                         value="Remove from cart"
                                          styleClass="btn btn-primary"/>
                     </h:column>
                 </h:dataTable>
             </h:form>
+            <b>Total price is <i class="fa fa-eur"/>#{cart.total}</b>
         </p>
     </div>
 </h:body>
